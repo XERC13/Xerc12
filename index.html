@@ -3,249 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ประวัติกีฬาเทเบิ้ลเทนนิส</title>
+    <title>เว็บโดเนทผ่านทรูมันนี่วอเลท</title>
     <style>
-        /* CSS เริ่มต้น */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* พื้นหลังน้ำเงิน */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
 
-        /* Header */
-        header {
-            background-color: #2a3d66;
-            color: white;
+        .container {
             text-align: center;
-            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.1); /* พื้นหลังโปร่งแสง */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 480px;
         }
 
-        header h1 {
-            font-size: 3em;
-            margin: 0;
+        .heading {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 1px;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
+        .amount-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ccc;
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        .amount-input {
+            padding: 12px;
+            font-size: 18px;
+            width: 80%;
+            border-radius: 8px;
+            border: 1px solid #2a5298;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* พื้นหลังกรอกข้อมูลโปร่งแสง */
+            color: #fff;
+            outline: none;
         }
 
-        nav ul li a {
-            color: white;
+        .amount-input::placeholder {
+            color: #ccc;
+        }
+
+        .donate-button {
+            background-color: #3498db; /* น้ำเงินสด */
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .donate-button:hover {
+            background-color: #2980b9; /* น้ำเงินเข้ม */
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .footer a {
+            color: #3498db;
             text-decoration: none;
-            font-size: 1.2em;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #5f6b8e;
-        }
-
-        /* Section */
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            color: #2a3d66;
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        .expand-toggle {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .expand-toggle:hover {
-            background-color: #45a049;
-        }
-
-        .expandable-content {
-            display: none;
-            margin-top: 10px;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: #121212;
-            color: white;
-        }
-
-        header.dark-mode {
-            background-color: #333;
-        }
-
-        section.dark-mode {
-            background-color: #2a2a2a;
-            color: white;
-        }
-
-        footer.dark-mode {
-            background-color: #333;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #2a3d66;
-            color: white;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Button Theme */
-        #theme-toggle {
-            background-color: #ff9800;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        #theme-toggle:hover {
-            background-color: #e68900;
-        }
-
-        /* Media Query for responsiveness */
-        @media screen and (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>ประวัติกีฬาเทเบิ้ลเทนนิส</h1>
-        <nav>
-            <ul>
-                <li><a href="#history">ประวัติศาสตร์</a></li>
-                <li><a href="#players">นักกีฬา</a></li>
-                <li><a href="#rules">กฎกติกา</a></li>
-            </ul>
-        </nav>
-        <button id="theme-toggle">เปลี่ยนธีม</button>
-    </header>
+    <div class="container">
+        <h1 class="heading">ขอบคุณสำหรับการสนับสนุน!</h1>
+        <p class="amount-label">กรุณากรอกจำนวนเงินที่คุณต้องการบริจาค:</p>
+        <input type="number" id="donateAmount" class="amount-input" placeholder="ไม่จำเป็นต้องใส่แค่โอนมาที่เบอร์ด้านล่าง" min="1">
+        <br>
+        <button class="donate-button" onclick="donate()">บริจาคตอนนี้</button>
 
-    <section id="history">
-        <h2>ประวัติศาสตร์ของกีฬาเทเบิ้ลเทนนิส</h2>
-        <button class="expand-toggle">แสดงเพิ่มเติม</button>
-        <div class="expandable-content">
-            <p>ประวัติเทเบิลเทนนิส หรือรู้จักกันในอีกชื่อว่ากีฬาปิงปองนั้น มีประวัติความเป็นมาอย่างไร เรามาเรียนรู้ประวัติกีฬาประเภทนี้ไปพร้อม ๆ กันเลย
-
-                กีฬาเทเบิลเทนนิสหรือที่เรียกกันจนเป็นที่ติดปากคุ้นเคยว่า ปิงปอง นั้น เป็นกีฬาที่รู้จักกันดีมาเป็นระยะเวลานานมาก และยังแพร่หลายได้รับความนิยมเล่นกันอยู่ทั่วโลก กีฬาเทเบิลเทนนิสเป็นกีฬาที่สามารถนำมาเล่นเพื่อสร้างความสนุกสนาน สร้างสัมพันธ์ได้เป็นอย่างดีเพราะลักษณะการเล่นง่าย ไม่ซับซ้อน ใช้พื้นที่ไม่มาก อุปกรณ์ราคาไม่แพง ไม่สร้างความยุ่งยาก เก็บรักษาได้ง่าย กติกาการเล่นและแข่งขันสามารถทำความเข้าใจได้ไม่ยากไม่มีความซับซ้อน สามารถเล่นร่วมกันได้ทั้งวัยเด็กและผู้ใหญ่ โดยมีทั้งการเล่นแบบเดี่ยว แบบคู่ และเล่นเป็นทีม โดยวิธีเล่นโดยทั่วไป แค่รู้จักวิธีการส่งลูก (การเสิร์ฟ – Serving) การรับลูก (รีเทิร์น – Return)ตีลูกให้ลงบนโต๊ะฝ่ายตรงข้าม ตีโต้กันไปมา หากฝ่ายใดทำลูกออก หรือ ไม่สามารถตีลูกลงบนโต๊ะของอีกฝ่ายได้ หรือ ตีติดตาข่าย ก็จะเสียแต้ม ผลัดกันส่งลูกฝ่ายละ 2 คะแนนจนจบการแข่งขัน ใน 1 เกมมี 11 คะแนน หากคะแนนเสมอกันที่ 10 คะแนนจะต้องทำการแข่งขันต่อไปจนกว่าฝ่ายใดฝ่ายหนึ่งจะมีคะแนนนำอีกฝ่าย 2 คะแนนก็ถือว่าชนะในเกมนั้น ซึ่งในการแข่งแต้มที่ 10 เป็นต้นไป จะผลัดกันส่งลูกฝ่ายละ 1 คะแนนสลับกันไปจนกว่าจะได้ผู้ชนะในเกมนั้น ในการแข่งขันเทเบิลเทนนิส นิยมเล่น 1 แมทช์ด้วยเกมการแข่งขันแบบ 2 ใน 3 เกม หรือ 3 ใน 5 เกม หรือ 4 ใน 7 เกม ความเป็นมาของกีฬาเทเบิลเทนนิส จากการศึกษาค้นคว้าไม่มีหลักฐานปรากฎแน่ชัดว่าเทเบิลเทนนิสมีถิ่นกำเนิดหรือที่มาจากที่ใดทั้งในสมัยโรมันหรือสมัยกรีกเหมือนเช่นกีฬาประเภทอื่น ซึ่งรัสเซียเองก็เคยอ้างว่าเป็นผู้คิดค้นการเล่นมาก่อนใคร ซึ่งอังกฤษก็อ้างว่าตนเป็นต้นกำเนิดเช่นกัน แต่ก็ไม่มีผู้ใดสามารถแสดงหลักฐานอ้างอิงได้อย่างชัดเจนหรือสามารถคัดค้านแต่ประการใดได้
-
-                อย่างไรก็ตามจากหนังสือประวัติศาสตร์กีฬาของแฟรงค์ มอนเก (Frank Monke) ได้สันนิษฐานเกี่ยวกับประวัติเทเบิลเทนนิสไว้ 2 ประการ คือ
-                
-                    อาจเป็นกีฬาในร่มของลอนเทนนิส ซึ่งเริ่มเล่นครั้งแรกในรัฐแมสซาชูเซตส์ สหรัฐอเมริกา ราวศตวรรษที่ 19 (ค.ศ. 1890)
-                    สันนิษฐานว่าเริ่มเล่นในอินเดียโดยนายทหารชาวอังกฤษซึ่งไปประจำการอยู่ที่อินเดียได้เคยเล่นกีฬาเทเบิลเทนนิสเป็นกีฬากลางแจ้งมาก่อน ด้วยการเล่นบนโต๊ะ และใช้สมุดกั้นแทนตาข่าย (บางฉบับระบุว่าใช้ไม้กระดานแทนตาข่าย) และยังมีอีกความเห็นหนึ่งว่า เกิดขึ้นครั้งแรกในประเทศแอฟริกาใต้ หรือบางความเห็นว่าเกิดขึ้นครั้งแรกในประเทศจีน
-                    กล่าวโดยสรุปคือ ประวัติเทเบิลเทนนิส ไม่สามารถทราบแน่ชัดได้ว่า ใครเป็นผู้คิดค้นหรือประเทศใดเป็นต้นกำเนิดของกีฬาเทเบิลเทนนิส แต่มีข้อบันทึกหลักฐานการโฆษณาเกี่ยวกับอุปกรณ์การเล่นกีฬาเทเบิลเทนนิสชาย หรือการโฆษณาเครื่องกีฬาเทเบิลเทนนิสในแมกกาซีนของประเทศอังกฤษ ที่ชื่อว่า British Sports Catalogs Advertised Table Tennis Equipment ในปี ค.ศ. 1880 ซึ่งสันนิษฐานกันว่า ชาวอังกฤษน่าจะเป็นผู้คิดค้นการเล่นกีฬาเทเบิลเทนนิสขึ้น และได้เล่นกีฬาเทเบิลเทนนิสเป็นกีฬาในร่มของเทนนิสมาตั้งแต่ปี ค.ศ. 1850 ด้วย ซึ่งสมัยนั้นเรียกว่า Gossima และใช้ลูกบอลทำด้วยไม้คอร์กหรือยางแข็งซึ่งแข็งเกินไป ถ้าไปถูกกระจกก็จะทำให้กระจกแตก โดยเกมกีฬาชนิดนี้ได้รับความนิยมและเป็นที่ยอมรับกันโดยทั่วไป
-
-นับตั้งแต่ปี ค.ศ. 1890 เป็นต้นมา อังกฤษก็เริ่มปรับปรุงการเล่นเทเบิลเทนนิสโดยมีพ่อค้าทำลูกเทเบิลเทนนิสที่ทำด้วยยางหรือไม้คอร์กแล้วใช้ผ้าหุ้มไว้อีกชั้นหนึ่ง เพื่อไม่ให้ลูกเทเบิลเทนนิสทำความเสียหายกับโต๊ะ และเพื่อให้ลูกเทเบิลเทนนิสหมุนได้ดีขึ้นด้วย จนกระทั้งปี ค.ศ. 1902 วิศวกรชาวอังกฤษชื่อ นายเจมส์ กิ๊บบ์ (Jame Gibb) ได้คิดลูกเทเบิลเทนนิสซึ่งเป็นลูกบอลเซลลูลอยด์ (Celluloid Balls) ซึ่งมีคุณสมบัติและสัดส่วนที่เหมาะสมชวนให้น่าเล่นยิ่งกว่าลูกบอลที่ทำมาจากไม้คอร์กหรือยางแข็ง และในปรเดียวกันนั้นเอง อี.ซี.กู๊ด (E.C. Good) ชาวอังกฤษได้คิดค้นประดิษฐ์ไม้ตีขึ้นใหม่ โดยใช้แผ่นยางติดไว้ที่ด้านที่จะใช้ตีลูก ทำให้ผู้ตีสามารถควบคุมทิศทางและน้ำหนักการตีลูกเทเบิลเทนนิสได้ดีกว่าเดิม ซึ่งเขายังได้ทดสอบให้เห็นได้ด้วยการเป็นผู้ชนะเลิศเทเบิลเทนนิสของชาวอังกฤษในสมัยนั้นอีกด้วย จึงทำให้ไม้ตีแบบใหม่และลูกบอลเซลลูลอยด์ได้รับความนิยมเป็นอย่างมาก เกมกีฬาเทเบิลเทนนิส จึงแพร่หลายไปอย่างรวดเร็วในประเทศต่าง ๆ และจากการพัฒนาปรับปรุงทั้งในส่วนของไม้ตี และลูกเทเบิลเทนนิสที่ทำจากเซลลูลอยด์ ทำให้เวลาตีจะมีเสียงดัง ปิง (Ping) และเมื่อลูกตกกระทบกับพื้นโต๊ะจะมีเสียงดัง ปอง (Pong) จึงเป็นที่มาของชื่อเรียกที่นิยมเรียกกันว่า ปิงปอง (Ping-pong) ตามสียงที่เกิดขึ้นจนถึงปัจจุบันข้อพิสูจน์ว่ากีฬาเทเบิลเทนนิสเป็นที่นิยมและแพร่หลายไปในประเทศต่าง ๆ ทั่วโลกมีดังนี้
-
-ในสมัยพระเจ้าจอร์จที่ 6 แห่งอังกฤษได้ทรงโปรดให้ตั้งโต๊ะปิงปองขึ้นใน พระราชวังบักกิงแฮม และสมัยสงครามโลกครั้งที่ 2 ก็ทรงจัดกีฬาปิงปองให้พระราชธิดา (เจ้าฟ้าเอลิซาเบธ) ได้ทรงเล่นเป็นที่สนุกสนานในพระราชวังแบลมอรัล นอกจากนี้ ยังมีเจ้าชายชาห์แห่งเปอร์เซีย บัณฑิตเนห์รูแห่งอินเดีย และกษัตริย์ฟารุกแห่งอียิปต์ในอดีต ซึ่งเป็นผู้ที่ส่งเสริมกีฬาปิงปองด้วยกันทั้งสิ้น
-
-ในศตวรรษที่ 20 มีนักศึกษาและนักท่องเที่ยวนำเอากีฬาเทเบิลเทนนิสเข้าสู่ประเทศออสเตรีย ฮังการี และอเมริกา เมื่อปี ค.ศ. 1895 ศาสตราจารย์ครุศาสตร์ท่านหนึ่งแห่งกรุงโตเกียว ประเทศญี่ปุ่น ได้ไปศึกษาที่ประเทศอังกฤษ ได้นำเอาโต๊ะ ตาข่าย และไม่เทเบิลเทนนิส (ไม้ปิงปอง) กลับประเทศญี่ปุ่นมาด้วย ทำให้กีฬาเทเบิลเทนนิส เริ่มเป็นที่รู้จักและเล่นกันอย่างแพร่หลายในประเทศญี่ปุ่น และได้แพร่ความนิยมเข้าสู่สาธารณรัฐประชาชนจีน ในปี ค.ศ. 1913
-                </p>
+        <div class="footer">
+            <p>โอนเงินผ่าน <strong>TrueMoney Wallet</strong> ไปที่เบอร์ <strong>0829308810</strong></p>
         </div>
-    </section>
-
-    <section id="players">
-        <h2>นักกีฬาและแชมป์</h2>
-        <p>กีฬาเทเบิ้ลเทนนิสมีนักกีฬาที่มีชื่อเสียงมากมาย โดยเฉพาะในระดับโลกเช่น:</p>
-        <ul>
-            <li><strong>Jan-Ove Waldner</strong> - นักเทเบิ้ลเทนนิสที่ถูกยกย่องว่าเป็น "ราชาแห่งปิงปอง" ของโลก</li>
-            <li><strong>Deng Yaping</strong> - นักกีฬาหญิงชาวจีนที่มีชื่อเสียงและได้รับเหรียญทองในโอลิมปิก</li>
-            <li><strong>Ma Long</strong> - นักกีฬาชายชาวจีนที่ได้รับการยอมรับว่าเป็นหนึ่งในนักกีฬาที่เก่งที่สุดในยุคปัจจุบัน</li>
-        </ul>
-    </section>
-
-    <section id="rules">
-        <h2>กฎกติกาของเกม</h2>
-        <p>การเล่นเทเบิ้ลเทนนิสมีหลายข้อกติกาพื้นฐานที่ผู้เล่นทุกคนต้องปฏิบัติตาม:</p>
-        <ul>
-            <li>การเสิร์ฟ: ผู้เล่นต้องเสิร์ฟให้ลูกตกในครึ่งสนามของฝ่ายตรงข้าม และการเสิร์ฟจะต้องสลับกันทุก 2 แต้ม</li>
-            <li>การนับคะแนน: เมื่อฝ่ายใดฝ่ายหนึ่งได้คะแนน 11 แต้มก่อน จะถือว่าเป็นผู้ชนะในเกมนั้น หากคะแนนเสมอกันที่ 10-10 จะต้องทำคะแนนให้มากกว่าอีกฝ่าย 2 แต้ม</li>
-            <li>การเปลี่ยนฝั่ง: ผู้เล่นจะต้องเปลี่ยนฝั่งทุกๆ 5 แต้ม</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>© 2024 เว็บไซต์กีฬาเทเบิ้ลเทนนิส</p>
-    </footer>
+    </div>
 
     <script>
-        // JavaScript สำหรับ Dark Mode
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const header = document.querySelector('header');
-            const sections = document.querySelectorAll('section');
-            const footer = document.querySelector('footer');
-
-            if (localStorage.getItem('dark-mode') === 'enabled') {
-                body.classList.add('dark-mode');
-                header.classList.add('dark-mode');
-                sections.forEach(section => section.classList.add('dark-mode'));
-                footer.classList.add('dark-mode');
+        function donate() {
+            const amount = document.getElementById("donateAmount").value;
+            if (amount && amount > 0) {
+                alert(`ขอบคุณที่บริจาค ${amount} บาท! กรุณาโอนผ่าน TrueMoney Wallet ไปที่เบอร์ 0829308810.`);
+            } else {
+                alert("กรุณากรอกจำนวนเงินที่ถูกต้อง!");
             }
-
-            themeToggleButton.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-                header.classList.toggle('dark-mode');
-                sections.forEach(section => section.classList.toggle('dark-mode'));
-                footer.classList.toggle('dark-mode');
-
-                if (body.classList.contains('dark-mode')) {
-                    localStorage.setItem('dark-mode', 'enabled');
-                } else {
-                    localStorage.setItem('dark-mode', 'disabled');
-                }
-            });
-        });
-
-        // JavaScript สำหรับ Expand/Collapse
-        document.addEventListener('DOMContentLoaded', () => {
-            const expandToggleButtons = document.querySelectorAll('.expand-toggle');
-
-            expandToggleButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const content = button.nextElementSibling;
-                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-
-                    button.textContent = content.style.display === 'block' ? 'ซ่อนข้อมูล' : 'แสดงเพิ่มเติม';
-                });
-            });
-        });
+        }
     </script>
 
 </body>
